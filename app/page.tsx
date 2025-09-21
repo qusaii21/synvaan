@@ -44,13 +44,17 @@ export default function SynvaanLanding() {
               animate={{ opacity: 1, x: 0 }}
               className="flex items-center space-x-3"
             >
-              {/* <div className="w-10 h-10 bg-gradient-to-br from-primary to-primary/80 rounded-lg flex items-center justify-center">
-                <div className="w-6 h-6 bg-primary-foreground rounded-sm flex items-center justify-center">
-                  <div className="w-3 h-3 bg-primary rounded-full"></div>
-                </div>
-              </div> */}
-              <span className="text-2xl font-bold text-primary">Synvaan</span>
+              {/* Logo in header */}
+              <motion.img
+                src="/logo2.png"
+                alt="Synvaan Logo"
+                initial={{ opacity: 0, y: -10 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6 }}
+                className="h-10 w-auto"
+              />
             </motion.div>
+
             <div className="hidden md:flex space-x-8">
               {["Home", "About", "Services", "Contact"].map((item, index) => (
                 <motion.button
@@ -68,6 +72,7 @@ export default function SynvaanLanding() {
           </div>
         </div>
       </nav>
+
 
       {/* Hero Section */}
       <section id="home" className="relative min-h-screen flex items-center justify-center overflow-hidden">
@@ -266,7 +271,7 @@ export default function SynvaanLanding() {
         </div>
       </section>
 
-      {/* Testimonials Section */}
+      {/* Our Team Section */}
       <section className="py-20 bg-card">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
@@ -276,32 +281,44 @@ export default function SynvaanLanding() {
             viewport={{ once: true }}
             className="text-center mb-16"
           >
-            <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-6">What Our Clients Say</h2>
+            <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-6">Our Team</h2>
           </motion.div>
 
           <div className="grid md:grid-cols-3 gap-8">
             {[
               {
-                name: "Sarah Johnson",
-                role: "CEO, TechStart Inc.",
+                name: "Solanki",
+                role: "Founder",
                 content:
-                  "Synvaan transformed our technology infrastructure and helped us scale efficiently. Their vision-to-value approach delivered exceptional results.",
+                  "Synvaan foundation is to innovate and collaborate that will drive breakthrough solutions which will symbolize limitless potential and boundless growth.",
               },
               {
-                name: "Michael Chen",
-                role: "CFO, Growth Dynamics",
+                name: "Hussein TK Jivanjee",
+                role: "CEO",
                 content:
-                  "The financial advisory services provided by Synvaan were instrumental in our successful funding round and strategic planning.",
+                  "At the heart of our fintech solutions lies honesty, where every transaction is built on trust. We are committed to delivering unparalleled quality and exceptional customer service, empowering you to thrive with confidence.",
               },
               {
-                name: "Emily Rodriguez",
-                role: "Operations Manager, RetailPro",
+                name: "Arwa Sabunwala",
+                role: "COO",
                 content:
-                  "Their smart inventory management system revolutionized our operations. The ROI was evident within the first quarter.",
+                  "The greatest achievement of technology is not how it changes life, but how it improves it. This is where our Synvaan mission is to convert your vision to value.",
               },
-            ].map((testimonial, index) => (
+              {
+                name: "TK Jivanjee",
+                role: "CFO",
+                content:
+                  "When Finance meets Technology it creates 'Fintech'. Synvaan visions integration of finance with technology to innovate digital tools that improve and automate financial services.",
+              },
+              {
+                name: "Iliyaz Hassan",
+                role: "Technology Lead",
+                content:
+                  "Being a part of Synvaan means being at the frontier of innovation — where collaboration meets purpose, and every challenge is an opportunity to deliver meaningful value.",
+              },
+            ].map((member, index) => (
               <motion.div
-                key={testimonial.name}
+                key={member.name}
                 initial={{ opacity: 0, y: 50 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: index * 0.2 }}
@@ -309,15 +326,10 @@ export default function SynvaanLanding() {
               >
                 <Card className="h-full">
                   <CardContent className="p-8">
-                    <div className="flex mb-4">
-                      {[...Array(5)].map((_, i) => (
-                        <Star key={i} className="h-5 w-5 text-yellow-400 fill-current" />
-                      ))}
-                    </div>
-                    <p className="text-muted-foreground mb-6 text-pretty">"{testimonial.content}"</p>
+                    <p className="text-muted-foreground mb-6 text-pretty">"{member.content}"</p>
                     <div>
-                      <p className="font-semibold text-foreground">{testimonial.name}</p>
-                      <p className="text-sm text-muted-foreground">{testimonial.role}</p>
+                      <p className="font-semibold text-foreground">{member.name}</p>
+                      <p className="text-sm text-muted-foreground">{member.role}</p>
                     </div>
                   </CardContent>
                 </Card>
@@ -385,7 +397,7 @@ export default function SynvaanLanding() {
                     </div>
                     <div>
                       <p className="font-medium text-foreground">Email</p>
-                      <p className="text-muted-foreground">hello@synvaan.com</p>
+                      <p className="text-muted-foreground">contact@synvaan.com</p>
                     </div>
                   </div>
                   <div className="flex items-center space-x-4">
@@ -394,7 +406,7 @@ export default function SynvaanLanding() {
                     </div>
                     <div>
                       <p className="font-medium text-foreground">Phone</p>
-                      <p className="text-muted-foreground">+1 (555) 123-4567</p>
+                      <p className="text-muted-foreground">+91 81808 85474</p>
                     </div>
                   </div>
                   <div className="flex items-center space-x-4">
@@ -403,7 +415,9 @@ export default function SynvaanLanding() {
                     </div>
                     <div>
                       <p className="font-medium text-foreground">Location</p>
-                      <p className="text-muted-foreground">San Francisco, CA</p>
+                      <p className="text-muted-foreground">
+                        Office no 54 Undri City Centre, Undri, Pune
+                      </p>
                     </div>
                   </div>
                 </div>
@@ -414,15 +428,21 @@ export default function SynvaanLanding() {
       </section>
 
       {/* Footer */}
-      <footer className="bg-primary text-primary-foreground py-12">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center">
-            <h3 className="text-2xl font-bold mb-4">Synvaan</h3>
-            <p className="text-primary-foreground/80 mb-6">Vision to Value</p>
-            <p className="text-primary-foreground/60">© 2024 Synvaan. All rights reserved.</p>
-          </div>
-        </div>
-      </footer>
+     <footer className="bg-gray-100 py-6 mt-10">
+  <div className="container mx-auto flex flex-col items-center justify-center">
+    {/* Centered Logo */}
+    <img
+      src="/logo1.png"   // 👈 replace with your logo path
+      alt="Company Logo"
+      className="h-10 w-auto mb-2"
+    />
+
+    <p className="text-sm text-gray-600">
+      © {new Date().getFullYear()} All rights reserved.
+    </p>
+  </div>
+</footer>
+
 
       {/* Scroll to Top Button */}
       {showScrollTop && (
