@@ -132,65 +132,65 @@ export default function SynvaanLanding() {
       </section>
 
       {/* About Section */}
-<section id="about" className="py-20 bg-muted/20">
-  <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-    <motion.div
-      initial={{ opacity: 0, y: 50 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.8 }}
-      viewport={{ once: true }}
-      className="text-center mb-16"
-    >
-      <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-6">About Us</h2>
-      <p className="text-xl text-muted-foreground max-w-3xl mx-auto text-pretty">
-        Synvaan is more than just a consultancy — we’re your partner in turning bold ideas into real outcomes.
-        Our team brings together expertise in technology, strategy, and finance to craft solutions that help
-        businesses grow, scale, and thrive in a digital-first world.
-      </p>
-    </motion.div>
+      <section id="about" className="py-20 bg-muted/20">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <motion.div
+            initial={{ opacity: 0, y: 50 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            viewport={{ once: true }}
+            className="text-center mb-16"
+          >
+            <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-6">About Us</h2>
+            <p className="text-xl text-muted-foreground max-w-3xl mx-auto text-pretty">
+              Synvaan is more than just a consultancy — we’re your partner in turning bold ideas into real outcomes.
+              Our team brings together expertise in technology, strategy, and finance to craft solutions that help
+              businesses grow, scale, and thrive in a digital-first world.
+            </p>
+          </motion.div>
 
-    <div className="grid md:grid-cols-3 gap-8">
-      {[
-        {
-          icon: Zap,
-          title: "Innovation-Driven",
-          description:
-            "We embrace the latest technology trends and deliver forward-thinking solutions to keep you ahead of the curve.",
-        },
-        {
-          icon: Users,
-          title: "Client-Centric",
-          description:
-            "Your success is our mission. We collaborate closely with you to create outcomes that truly matter.",
-        },
-        {
-          icon: TrendingUp,
-          title: "Results-Focused",
-          description:
-            "Our approach is practical, measurable, and designed to create tangible business value, not just plans on paper.",
-        },
-      ].map((item, index) => (
-        <motion.div
-          key={item.title}
-          initial={{ opacity: 0, y: 50 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: index * 0.2 }}
-          viewport={{ once: true }}
-        >
-          <Card className="h-full hover:shadow-lg transition-all duration-300 hover:-translate-y-2 group">
-            <CardContent className="p-6 text-center">
-              <div className="w-14 h-14 bg-primary/10 rounded-lg flex items-center justify-center mb-4 mx-auto group-hover:bg-primary/20 transition-colors duration-300">
-                <item.icon className="h-7 w-7 text-primary" />
-              </div>
-              <h3 className="text-xl font-semibold mb-3">{item.title}</h3>
-              <p className="text-muted-foreground text-pretty">{item.description}</p>
-            </CardContent>
-          </Card>
-        </motion.div>
-      ))}
-    </div>
-  </div>
-</section>
+          <div className="grid md:grid-cols-3 gap-8">
+            {[
+              {
+                icon: Zap,
+                title: "Innovation-Driven",
+                description:
+                  "We embrace the latest technology trends and deliver forward-thinking solutions to keep you ahead of the curve.",
+              },
+              {
+                icon: Users,
+                title: "Client-Centric",
+                description:
+                  "Your success is our mission. We collaborate closely with you to create outcomes that truly matter.",
+              },
+              {
+                icon: TrendingUp,
+                title: "Results-Focused",
+                description:
+                  "Our approach is practical, measurable, and designed to create tangible business value, not just plans on paper.",
+              },
+            ].map((item, index) => (
+              <motion.div
+                key={item.title}
+                initial={{ opacity: 0, y: 50 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8, delay: index * 0.2 }}
+                viewport={{ once: true }}
+              >
+                <Card className="h-full hover:shadow-lg transition-all duration-300 hover:-translate-y-2 group">
+                  <CardContent className="p-6 text-center">
+                    <div className="w-14 h-14 bg-primary/10 rounded-lg flex items-center justify-center mb-4 mx-auto group-hover:bg-primary/20 transition-colors duration-300">
+                      <item.icon className="h-7 w-7 text-primary" />
+                    </div>
+                    <h3 className="text-xl font-semibold mb-3">{item.title}</h3>
+                    <p className="text-muted-foreground text-pretty">{item.description}</p>
+                  </CardContent>
+                </Card>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
 
 
       {/* Services Section */}
@@ -278,6 +278,8 @@ export default function SynvaanLanding() {
           </div>
         </div>
       </section>
+
+      {/* Our Team Section */} <section className="py-20 bg-card"> <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8"> <motion.div initial={{ opacity: 0, y: 50 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.8 }} viewport={{ once: true }} className="text-center mb-16" > <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-6">Our Team</h2> </motion.div> <div className="grid md:grid-cols-3 gap-8"> {[{ name: "Solanki", role: "Founder", content: "Synvaan foundation is to innovate and collaborate that will drive breakthrough solutions which will symbolize limitless potential and boundless growth.", }, { name: "Hussein TK Jivanjee", role: "CEO", content: "At the heart of our fintech solutions lies honesty, where every transaction is built on trust. We are committed to delivering unparalleled quality and exceptional customer service, empowering you to thrive with confidence.", }, { name: "Arwa Sabunwala", role: "COO", content: "The greatest achievement of technology is not how it changes life, but how it improves it. This is where our Synvaan mission is to convert your vision to value.", }, { name: "TK Jivanjee", role: "CFO", content: "When Finance meets Technology it creates 'Fintech'. Synvaan visions integration of finance with technology to innovate digital tools that improve and automate financial services.", }, { name: "Iliyaz Hassan", role: "Technology Lead", content: "Being a part of Synvaan means being at the frontier of innovation — where collaboration meets purpose, and every challenge is an opportunity to deliver meaningful value.", },].map((member, index) => (<motion.div key={member.name} initial={{ opacity: 0, y: 50 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.8, delay: index * 0.2 }} viewport={{ once: true }} > <Card className="h-full"> <CardContent className="p-8"> <p className="text-muted-foreground mb-6 text-pretty">"{member.content}"</p> <div> <p className="font-semibold text-foreground">{member.name}</p> <p className="text-sm text-muted-foreground">{member.role}</p> </div> </CardContent> </Card> </motion.div>))} </div> </div> </section>
 
       {/* Contact Section */}
       <section id="contact" className="py-20">
