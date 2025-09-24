@@ -6,7 +6,7 @@ import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
 import { Input } from "@/components/ui/input"
 import { Textarea } from "@/components/ui/textarea"
-import { ChevronRight, Zap, TrendingUp, Shield, Users, Mail, Phone, MapPin, Star, ArrowUp } from "lucide-react"
+import { ChevronRight, Zap, TrendingUp, Shield, Users, Mail, Phone, MapPin, ArrowUp } from "lucide-react"
 
 export default function SynvaanLanding() {
   const [isVisible, setIsVisible] = useState(false)
@@ -73,7 +73,6 @@ export default function SynvaanLanding() {
         </div>
       </nav>
 
-
       {/* Hero Section */}
       <section id="home" className="relative min-h-screen flex items-center justify-center overflow-hidden">
         {/* Animated Background */}
@@ -92,18 +91,15 @@ export default function SynvaanLanding() {
         </div>
 
         <div className="relative z-10 text-center px-4 sm:px-6 lg:px-8 max-w-4xl mx-auto">
-  {/* Logo Image in Center */}
-  <motion.img
-    src="/logo1.png" // <- same logo from public folder
-    alt="Synvaan Logo"
-    initial={{ opacity: 0, y: -20 }}
-    animate={{ opacity: isVisible ? 1 : 0, y: isVisible ? 0 : -20 }}
-    transition={{ duration: 0.8 }}
-    className="mx-auto mb-8 h-40 w-auto object-contain drop-shadow-lg"
-  />
-
- 
-
+          {/* Logo Image in Center */}
+          <motion.img
+            src="/logo1.png"
+            alt="Synvaan Logo"
+            initial={{ opacity: 0, y: -20 }}
+            animate={{ opacity: isVisible ? 1 : 0, y: isVisible ? 0 : -20 }}
+            transition={{ duration: 0.8 }}
+            className="mx-auto mb-8 h-40 w-auto object-contain drop-shadow-lg"
+          />
 
           <motion.p
             initial={{ opacity: 0, y: 30 }}
@@ -136,81 +132,66 @@ export default function SynvaanLanding() {
       </section>
 
       {/* About Section */}
-      <section id="about" className="py-20 bg-card">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <motion.div
-            initial={{ opacity: 0, y: 50 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            viewport={{ once: true }}
-            className="text-center mb-16"
-          >
-            <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-6">About Synvaan</h2>
-            <p className="text-xl text-muted-foreground max-w-3xl mx-auto text-pretty">
-              Our name reflects our mission: <strong className="text-primary">"Syn"</strong> represents Synthesis - the
-              innovation and collaboration that drives breakthrough solutions.{" "}
-              <strong className="text-primary">"Vaan"</strong> means Sky - symbolizing limitless potential and boundless
-              growth.
-            </p>
-          </motion.div>
+<section id="about" className="py-20 bg-muted/20">
+  <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <motion.div
+      initial={{ opacity: 0, y: 50 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.8 }}
+      viewport={{ once: true }}
+      className="text-center mb-16"
+    >
+      <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-6">About Us</h2>
+      <p className="text-xl text-muted-foreground max-w-3xl mx-auto text-pretty">
+        Synvaan is more than just a consultancy — we’re your partner in turning bold ideas into real outcomes.
+        Our team brings together expertise in technology, strategy, and finance to craft solutions that help
+        businesses grow, scale, and thrive in a digital-first world.
+      </p>
+    </motion.div>
 
-          <div className="grid md:grid-cols-2 gap-12 items-center">
-            <motion.div
-              initial={{ opacity: 0, x: -50 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.8 }}
-              viewport={{ once: true }}
-            >
-              <h3 className="text-2xl font-bold text-foreground mb-6">Our Mission</h3>
-              <p className="text-lg text-muted-foreground mb-6 text-pretty">
-                We fuse vision with execution to turn bold ideas into meaningful, value-driven outcomes. Through
-                strategic consulting and innovative technology solutions, we help businesses navigate complexity and
-                achieve sustainable growth.
-              </p>
-              <div className="space-y-4">
-                {[
-                  "Strategic Technology Consulting",
-                  "Financial Advisory & Planning",
-                  "Digital Transformation",
-                  "Innovation & Growth Strategy",
-                ].map((item, index) => (
-                  <motion.div
-                    key={item}
-                    initial={{ opacity: 0, x: -20 }}
-                    whileInView={{ opacity: 1, x: 0 }}
-                    transition={{ duration: 0.5, delay: index * 0.1 }}
-                    viewport={{ once: true }}
-                    className="flex items-center space-x-3"
-                  >
-                    <div className="w-2 h-2 bg-primary rounded-full" />
-                    <span className="text-foreground">{item}</span>
-                  </motion.div>
-                ))}
+    <div className="grid md:grid-cols-3 gap-8">
+      {[
+        {
+          icon: Zap,
+          title: "Innovation-Driven",
+          description:
+            "We embrace the latest technology trends and deliver forward-thinking solutions to keep you ahead of the curve.",
+        },
+        {
+          icon: Users,
+          title: "Client-Centric",
+          description:
+            "Your success is our mission. We collaborate closely with you to create outcomes that truly matter.",
+        },
+        {
+          icon: TrendingUp,
+          title: "Results-Focused",
+          description:
+            "Our approach is practical, measurable, and designed to create tangible business value, not just plans on paper.",
+        },
+      ].map((item, index) => (
+        <motion.div
+          key={item.title}
+          initial={{ opacity: 0, y: 50 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: index * 0.2 }}
+          viewport={{ once: true }}
+        >
+          <Card className="h-full hover:shadow-lg transition-all duration-300 hover:-translate-y-2 group">
+            <CardContent className="p-6 text-center">
+              <div className="w-14 h-14 bg-primary/10 rounded-lg flex items-center justify-center mb-4 mx-auto group-hover:bg-primary/20 transition-colors duration-300">
+                <item.icon className="h-7 w-7 text-primary" />
               </div>
-            </motion.div>
+              <h3 className="text-xl font-semibold mb-3">{item.title}</h3>
+              <p className="text-muted-foreground text-pretty">{item.description}</p>
+            </CardContent>
+          </Card>
+        </motion.div>
+      ))}
+    </div>
+  </div>
+</section>
 
-            <motion.div
-              initial={{ opacity: 0, x: 50 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.8 }}
-              viewport={{ once: true }}
-              className="relative"
-            >
-              <div className="bg-gradient-to-br from-primary/20 to-secondary/20 rounded-2xl p-8 h-96 flex items-center justify-center">
-                <div className="text-center">
-                  <div className="w-24 h-24 bg-primary rounded-full flex items-center justify-center mx-auto mb-6">
-                    <Zap className="h-12 w-12 text-primary-foreground" />
-                  </div>
-                  <h4 className="text-xl font-semibold text-foreground mb-2">Innovation Driven</h4>
-                  <p className="text-muted-foreground text-pretty">
-                    Transforming ideas into reality through cutting-edge solutions
-                  </p>
-                </div>
-              </div>
-            </motion.div>
-          </div>
-        </div>
-      </section>
 
       {/* Services Section */}
       <section id="services" className="py-20">
@@ -229,24 +210,18 @@ export default function SynvaanLanding() {
           </motion.div>
 
           <div className="grid md:grid-cols-3 gap-8">
-            {[
+            {[ // first two services stay normal
               {
                 icon: TrendingUp,
-                title: "Technology Consulting",
+                title: "Technology Solutions and Consultation",
                 description:
                   "Strategic technology guidance to optimize your digital infrastructure and drive innovation across your organization.",
               },
               {
                 icon: Shield,
-                title: "Financial Advisory",
+                title: "Financial Services and Advisory",
                 description:
                   "Expert financial planning and advisory services to ensure sustainable growth and optimal resource allocation.",
-              },
-              {
-                icon: Users,
-                title: "Smart Inventory Management",
-                description:
-                  "Role-based barcode system designed specifically for SMEs to streamline operations and improve efficiency.",
               },
             ].map((service, index) => (
               <motion.div
@@ -267,74 +242,39 @@ export default function SynvaanLanding() {
                 </Card>
               </motion.div>
             ))}
-          </div>
-        </div>
-      </section>
 
-      {/* Our Team Section */}
-      <section className="py-20 bg-card">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <motion.div
-            initial={{ opacity: 0, y: 50 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            viewport={{ once: true }}
-            className="text-center mb-16"
-          >
-            <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-6">Our Team</h2>
-          </motion.div>
+            {/* 🔥 ON Going Project Section (Heading inside the box) */}
+            <motion.div
+              initial={{ opacity: 0, y: 50 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.4 }}
+              viewport={{ once: true }}
+              className="col-span-1"
+            >
+              <Card className="h-full hover:shadow-xl transition-all duration-300 hover:-translate-y-2 group border-2 border-primary/30 relative">
+                <CardContent className="p-8">
+                  {/* Label inside card */}
+                  <div className="mb-4 flex justify-center">
+                    <span className="px-4 py-1 text-sm font-semibold bg-primary/10 text-primary rounded-full">
+                      ON Going Project
+                    </span>
+                  </div>
 
-          <div className="grid md:grid-cols-3 gap-8">
-            {[
-              {
-                name: "Solanki",
-                role: "Founder",
-                content:
-                  "Synvaan foundation is to innovate and collaborate that will drive breakthrough solutions which will symbolize limitless potential and boundless growth.",
-              },
-              {
-                name: "Hussein TK Jivanjee",
-                role: "CEO",
-                content:
-                  "At the heart of our fintech solutions lies honesty, where every transaction is built on trust. We are committed to delivering unparalleled quality and exceptional customer service, empowering you to thrive with confidence.",
-              },
-              {
-                name: "Arwa Sabunwala",
-                role: "COO",
-                content:
-                  "The greatest achievement of technology is not how it changes life, but how it improves it. This is where our Synvaan mission is to convert your vision to value.",
-              },
-              {
-                name: "TK Jivanjee",
-                role: "CFO",
-                content:
-                  "When Finance meets Technology it creates 'Fintech'. Synvaan visions integration of finance with technology to innovate digital tools that improve and automate financial services.",
-              },
-              {
-                name: "Iliyaz Hassan",
-                role: "Technology Lead",
-                content:
-                  "Being a part of Synvaan means being at the frontier of innovation — where collaboration meets purpose, and every challenge is an opportunity to deliver meaningful value.",
-              },
-            ].map((member, index) => (
-              <motion.div
-                key={member.name}
-                initial={{ opacity: 0, y: 50 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.8, delay: index * 0.2 }}
-                viewport={{ once: true }}
-              >
-                <Card className="h-full">
-                  <CardContent className="p-8">
-                    <p className="text-muted-foreground mb-6 text-pretty">"{member.content}"</p>
-                    <div>
-                      <p className="font-semibold text-foreground">{member.name}</p>
-                      <p className="text-sm text-muted-foreground">{member.role}</p>
-                    </div>
-                  </CardContent>
-                </Card>
-              </motion.div>
-            ))}
+                  <div className="w-16 h-16 bg-primary/10 rounded-lg flex items-center justify-center mb-6 group-hover:bg-primary/20 transition-colors duration-300 mx-auto">
+                    <Users className="h-8 w-8 text-primary" />
+                  </div>
+
+                  <h3 className="text-xl font-semibold text-foreground mb-4 text-center">
+                    Smart Inventory Management
+                  </h3>
+
+                  <p className="text-muted-foreground text-pretty text-center">
+                    Role-based barcode system designed specifically for SMEs to streamline
+                    operations and improve efficiency.
+                  </p>
+                </CardContent>
+              </Card>
+            </motion.div>
           </div>
         </div>
       </section>
@@ -356,6 +296,7 @@ export default function SynvaanLanding() {
           </motion.div>
 
           <div className="grid md:grid-cols-2 gap-12">
+            {/* Contact Form */}
             <motion.div
               initial={{ opacity: 0, x: -50 }}
               whileInView={{ opacity: 1, x: 0 }}
@@ -381,6 +322,7 @@ export default function SynvaanLanding() {
               </Card>
             </motion.div>
 
+            {/* Contact Info */}
             <motion.div
               initial={{ opacity: 0, x: 50 }}
               whileInView={{ opacity: 1, x: 0 }}
@@ -416,7 +358,7 @@ export default function SynvaanLanding() {
                     <div>
                       <p className="font-medium text-foreground">Location</p>
                       <p className="text-muted-foreground">
-                        Office no 54 Undri City Centre, Undri, Pune
+                        Undri City Centre, 3rd Floor, Office no 302A, Cabin No 1, Undri, Pune 411060
                       </p>
                     </div>
                   </div>
@@ -428,21 +370,19 @@ export default function SynvaanLanding() {
       </section>
 
       {/* Footer */}
-     <footer className="bg-gray-100 py-6 mt-10">
-  <div className="container mx-auto flex flex-col items-center justify-center">
-    {/* Centered Logo */}
-    <img
-      src="/logo1.png"   // 👈 replace with your logo path
-      alt="Company Logo"
-      className="h-10 w-auto mb-2"
-    />
-
-    <p className="text-sm text-gray-600">
-      © {new Date().getFullYear()} All rights reserved.
-    </p>
-  </div>
-</footer>
-
+      <footer className="bg-gray-100 py-6 mt-10">
+        <div className="container mx-auto flex flex-col items-center justify-center">
+          {/* Centered Logo */}
+          <img
+            src="/logo1.png"
+            alt="Company Logo"
+            className="h-10 w-auto mb-2"
+          />
+          <p className="text-sm text-gray-600">
+            © {new Date().getFullYear()} All rights reserved.
+          </p>
+        </div>
+      </footer>
 
       {/* Scroll to Top Button */}
       {showScrollTop && (
